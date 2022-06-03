@@ -27,4 +27,10 @@ public class BusinessAccount extends Account{
             saldo += valor - 10.0;
         }
     }
+
+    @Override
+    public void sacar(double valor) {
+        super.sacar(valor);
+        saldo -= 2.0;
+    }
 }

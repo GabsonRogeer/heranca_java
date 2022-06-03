@@ -7,17 +7,14 @@ import inheritance1.entities.SavingsAccount;
 public class Program {
     public static void main(String[] args) {
 
-        Account acc = new Account(1001, "Gabson", 00.00);
-        BusinessAccount bacc = new BusinessAccount(1002, "Maria", 0.00, 500.0);
+        Account x = new Account(1001, "Alex", 1000.0);
+        Account y = new SavingsAccount(1002, "Bob", 1000.0,0.01);
 
-        //UPCASTING
+        x.sacar(50.0);
+        y.sacar(50.0);
 
-        Account acc1 = bacc;
-        Account acc2 = new BusinessAccount(1003, "bob", 0.0, 200.00);
-        Account acc3 = new SavingsAccount(1004, "Anna", 0.0, 0.01);
-
-        //DOWNCASTING
-
+        System.out.println(x.getSaldo());
+        System.out.println(y.getSaldo());
 
     }
 }
