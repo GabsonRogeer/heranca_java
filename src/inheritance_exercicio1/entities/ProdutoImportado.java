@@ -17,5 +17,19 @@ public class ProdutoImportado extends Produto {
         this.taxaImportacao = taxaImportacao;
     }
 
+    public double total() {
+        return getPreço() + taxaImportacao;
+    }
+
+    @Override
+    public String Etiqueta() {
+        return getNome()
+                + " $"
+                + String.format("%.2f", total())
+                + " (Taxa de Importação: $"
+                + String.format("%.2f", taxaImportacao)
+                + ")";
+    }
+
 
 }

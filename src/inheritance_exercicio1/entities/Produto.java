@@ -28,7 +28,7 @@ public class Produto {
 
     public String Etiqueta() {
         return nome
-                + " $ "
+                + " $"
                 + String.format("%.2f", preço);
         }
     }
