@@ -1,16 +1,38 @@
 package inheritance_exercicio2.entities;
 
-public class PessoaFisica extends TaxaImposto{
+public class PessoaFisica extends ImpostoDeRenda{
 
-    private Double gostosComSaude;
+    private Double gastosComSaude;
 
-    public PessoaFisica(String nome, Double rendaAnual, Double gostosComSaude) {
+    public PessoaFisica(String nome, Double rendaAnual, Double gastosComSaude) {
         super(nome, rendaAnual);
-        this.gostosComSaude = gostosComSaude;
+        this.gastosComSaude = gastosComSaude;
+    }
+
+    public Double getGastosComSaude() {
+        return gastosComSaude;
+    }
+
+    public void setGastosComSaude(Double gastosComSaude) {
+        this.gastosComSaude = gastosComSaude;
+    }
+
+    public Double desconto() {
+        double taxa = 0;
+        if (gastosComSaude > 0) {
+            taxa = gastosComSaude * 50 / 100;
+        }
+        return taxa;
     }
 
     @Override
-    public Double taxa() {
-        return null;
+    public Double imposto() {
+        double taxa = 0;
+        if (rendaAnual <= 2000) {
+            taxa = rendaAnual * 15 / 100;
+        } else {
+            taxa = rendaAnual * 25 / 100;
+        }
+        return taxa - desconto();
     }
 }

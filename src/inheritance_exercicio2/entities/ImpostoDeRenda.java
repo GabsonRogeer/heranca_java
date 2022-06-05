@@ -1,14 +1,11 @@
 package inheritance_exercicio2.entities;
 
-public abstract class TaxaImposto {
+public abstract class ImpostoDeRenda {
 
     String nome;
     Double rendaAnual;
 
-    public TaxaImposto(){
-    }
-
-    public TaxaImposto(String nome, Double rendaAnual) {
+    public ImpostoDeRenda(String nome, Double rendaAnual) {
         this.nome = nome;
         this.rendaAnual = rendaAnual;
     }
@@ -29,5 +26,5 @@ public abstract class TaxaImposto {
         this.rendaAnual = rendaAnual;
     }
 
-    public abstract Double taxa();
+    public abstract Double imposto();
 }
